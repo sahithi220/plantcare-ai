@@ -4,6 +4,7 @@ dist/
 coverage/
 *.db
 *.db-*
+.render/
 .DS_Store
 *.log
 .env*

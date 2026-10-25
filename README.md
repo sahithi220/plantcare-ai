@@ -40,6 +40,16 @@ AI-powered plant care that analyzes leaf images for possible diseases and offers
 - `npm run preview` serves the production build locally.
 - `npm run lint` runs the TypeScript check.
 
+## Deploy to Render
+
+This repository includes a Render Blueprint in `render.yaml`.
+
+1. Sign in to [Render](https://render.com/) and create a new Blueprint Instance from this GitHub repository.
+2. Set `GEMINI_API_KEY` in the service's Environment settings. Do not commit the key to the repository.
+3. Deploy the service. Render builds the frontend and starts the Express server; the server listens on Render's assigned `PORT`.
+
+The free web service uses a temporary filesystem. Plant scan history stored in SQLite can be lost when the service restarts or redeploys. Use persistent storage and configure the database path if scan history must survive restarts.
+
 ## GitHub repository description
 
 AI-powered plant care app that identifies plant diseases from leaf images and provides treatment recommendations, scan history, and a gardening assistant.
